@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 public class CapitaledItalia extends AppCompatActivity {
 
+    //
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
