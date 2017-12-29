@@ -26,7 +26,7 @@ public class CapitaledItalia extends AppCompatActivity {
 
         final String InitLabelRisposta = (String) LabelRisposta.getText();
         final String InitEditRisposta = EditRisposta.getText().toString();
-        final String RispostaEsatta = "ROMA";
+        final String RispostaEsatta = {"ROMA","VIENNA","PECHINO","BUDAPEST","BERLINO"};
 
         ButtonVerifica.setOnClickListener(
                 new Button.OnClickListener() {
@@ -36,10 +36,12 @@ public class CapitaledItalia extends AppCompatActivity {
                         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
 
                         String RispostaData = EditRisposta.getText().toString().toUpperCase();
-                        if (RispostaData.equals(RispostaEsatta)) {
-                            LabelRisposta.setText("esatto");
-                        } else {
-                            LabelRisposta.setText("sbagliato");
+                        for (String string : RispostaEsatta) {
+    	                         if(string.equals(RispostaData)){
+    	                                    LabelRisposta.setText("esatto");
+    	                          }
+                           else {
+                                 LabelRisposta.setText("sbagliato");
                         }
                     }
                 }
